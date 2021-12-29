@@ -647,3 +647,223 @@ function lowerCase(word){
 function upperCase(word){
     return word.toUpperCase()
 }
+
+
+// ----------------------------------- //
+
+// Problem statement#
+Write a program that returns the total number of vowels in a word.
+
+let word = "This is a string"; 
+
+function vowels(word){
+    var count=0;
+    for (w of word)
+    {
+        if (w=='a' || w == 'e' || w=='i' || w == 'o' || w=='u')
+        {
+            count++;
+        }
+    }
+    return count;
+}
+
+
+
+// ==========================================//
+
+
+Problem statement#
+Write a program that returns the given word in reverse order.
+
+
+function reverse(word)
+{
+	let reversedWord = ""
+	for (let i=word.length - 1; i>=0; i--)
+	{
+		reversedWord+=word[i]
+
+	}
+	return reversedWord
+}
+
+console.log(reverse("Adil"))
+
+
+
+// ================================================//
+
+// Object oriented Programming
+
+
+
+class Character {
+  constructor(name, health, strength) {
+    this.name = name;
+    this.health = health;
+    this.strength = strength;
+    this.xp = 0; // XP is always zero for new characters
+  }
+  // Return the character description
+  describe() {
+    return `${this.name} has ${this.health} health points, ${this
+      .strength} as strength and ${this.xp} XP points`;
+  }
+}
+
+
+const aurora = new Character("adil", 100, 20)
+console.log(aurora.describe())
+
+
+
+// ===========================//
+
+// Problem Statement#
+// A Dog is defined by:
+
+// A name property
+// A species property
+// A size property
+// A bark() method that returns “Grrr! Grrr!” for Dogs taller than 60 emote, and for others, it simply returns “Woof! Woof!”.
+
+class Dog{
+  constructor(name,species,size){
+  		this.name = name;
+    	this.species = species;
+    	this.size = size;
+  	}
+  bark(){
+	  if(this.size > 60)
+	  {	
+		console.log(this.name + " is a " + this.species + " dog measuring " + this.size) //Fang is a boarhound dog measuring 75
+		console.log(this.name + " barks: Grrr! Grrr!"); //Fang barks: Grrr! Grrr!
+	  } 
+	  else
+	  {
+	    console.log(this.name + " is a " + this.species + " dog measuring " + this.size) //Snowy is a terrier dog measuring 22
+	  	console.log(this.name + " barks: Woof! Woof!"); //Snowy barks: Woof! Woof!
+	  }
+  	}
+}
+let object = new Dog("Fang","boarhound", 75);
+object.bark();
+
+let object1 = new Dog("Snowy","terrier", 22);
+object1.bark();
+
+// Map 
+
+const numbers = [21,12,23,1,3]
+
+const double = numbers.map(x => x*2)
+
+
+// FIlter
+
+const numbers = [1, 5, 10, 15];
+// Keep only the number greater than or equal to 10
+const bigOnes = numbers.filter(x => x >= 10);
+
+console.log(numbers); // [1, 5, 10, 15] (no change)
+console.log(bigOnes); // [10, 15]
+
+
+
+ 
+// ===============================================//
+
+// DOM
+
+
+window.addEventListener("load", e => {
+  console.log("The page has been loaded!");
+});
+
+
+
+
+
+// ================ //
+
+// Problem statement#
+// Start with the following HTML content and write the JavaScript code that counts the number of clicks on the myButton button by updating the clickCount element. The deactivate button stops the counting.
+
+// If you get stuck, you can refer to the given solution!
+
+
+// HTML
+
+<html>
+ <head>
+ </head>
+ <body>
+	<button id="myButton">Click me!</button>
+	<p>You clicked on the button <span id="clickCount">0</span> times</p>
+	<button id="deactivate">Deactivate counting</button> </body>
+</html>
+
+
+// Javascript
+
+
+var count = 0;
+let clickCount = document.getElementById('clickCount')
+let btn = document.getElementById('myButton')
+ 
+      document.getElementById('myButton').addEventListener("click", function() {
+     document.getElementById('clickCount').textContent =  count++;
+})
+ 
+
+ document.getElementById("deactivate").addEventListener("click", function() {
+       let count = 0;
+document.getElementById('clickCount').innerHTML = count
+ })
+
+ 
+ // ================================== //
+
+
+Problem statement#
+The following HTML code defines a list of desserts, empty for now.
+
+Write the JavaScript code that adds a new dessert to the list when the user clicks on the button. The dessert name is chosen by the user.
+ 
+If you get stuck, you can refer to the given solution.
+
+
+// HTML
+<html>
+ <head>
+ </head>
+ <body>
+	<h1>My favourite desserts</h1>
+
+	<ul id="desserts">
+	</ul>
+
+   <p><button id="addButton">Add a dessert</button></p>
+  </body>
+</html>
+
+
+// Javascript
+let btn = document.getElementById('addButton');
+let ull = document.getElementById("desserts");
+ 
+ 
+let count = 0;
+btn.addEventListener("click", function() {
+     
+     let user = prompt("Enter : ")
+      let list = document.createElement('li')
+      list.textContent = user
+        ull.appendChild(list)
+   
+   
+})
+
+
+
